@@ -2,6 +2,9 @@ package com.ray.world.common;
 
 import java.util.Date;
 
+import com.ray.util.TimeUnit;
+import com.ray.util.io.Out;
+
 public class DateUtil {
     
     public static final byte SEC_1_DAY = 1; // 1s = 1Ìì
@@ -28,6 +31,9 @@ public class DateUtil {
         
         Date t = new Date();
         
+        TimeUnit.SECOND.sleep(70);
+        
+        Out.p(getYears(t));
         
     }
     
