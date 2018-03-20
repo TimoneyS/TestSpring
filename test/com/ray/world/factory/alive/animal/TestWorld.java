@@ -1,4 +1,4 @@
-package com.ray.world.factory.animal;
+package com.ray.world.factory.alive.animal;
 
 import static org.junit.Assert.assertEquals;
 
