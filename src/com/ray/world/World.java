@@ -4,8 +4,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.ray.util.io.Out;
+import com.ray.world.alive.animal.Cat;
 import com.ray.world.common.Sex;
-import com.ray.world.factory.alive.animal.CatFactory;
+import com.ray.world.factory.Factory;
 
 public class World {
     
@@ -14,9 +15,11 @@ public class World {
         
         ApplicationContext context = new AnnotationConfigApplicationContext(com.ray.world.WorldConfig.class);
         
-        CatFactory factory = context.getBean(CatFactory.class);
+        Factory<Cat> factory = (Factory<Cat>) context.getBean("catFactory");
         
         Out.p(factory.create("Kitty", "pink", Sex.Female));
+        
+        Out.p(factory.create());
         
     }
     

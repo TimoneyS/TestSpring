@@ -6,7 +6,7 @@ import com.ray.world.alive.animal.Cat;
 import com.ray.world.common.Sex;
 import com.ray.world.factory.Factory;
 
-@Component
+@Component("catFactory")
 public class CatFactory implements Factory<Cat> {
 
     public Cat create(Object... args) {
