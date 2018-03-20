@@ -35,7 +35,7 @@ public class Cat {
     }
     
     public String toString() {
-        return String.format("%s is a %d years old %s %s cat", name, DateUtil.getYears(birthDay), color, sex);
+        return String.format("%s is a %d years old %s %s cat", name, DateUtil.getAge(birthDay), color, sex);
     }
     
 }
