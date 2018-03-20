@@ -9,12 +9,15 @@ import com.ray.world.factory.alive.animal.CatFactory;
 
 public class World {
     
+    @SuppressWarnings("resource")
     public void run() {
+        
         ApplicationContext context = new AnnotationConfigApplicationContext(com.ray.world.WorldConfig.class);
         
         CatFactory factory = context.getBean(CatFactory.class);
         
-        Out.p(factory.createCat("Kitty", "pink", Sex.Female));
+        Out.p(factory.create("Kitty", "pink", Sex.Female));
+        
     }
     
     public static void main(String[] args) {

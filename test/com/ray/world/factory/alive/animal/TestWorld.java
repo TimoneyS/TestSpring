@@ -1,7 +1,5 @@
 package com.ray.world.factory.alive.animal;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,7 +24,7 @@ public class TestWorld {
     }
     
     public void createCat() {
-        Cat cat = factory.createCat( "Kitty", "pink", Sex.Female);
+        Cat cat = factory.create( "Kitty", "pink", Sex.Female);
         Assert.assertEquals(cat.getName(), "Kitty");
         Assert.assertEquals(cat.getColor(), "pink");
         Assert.assertEquals(cat.getSex(), Sex.Female);
