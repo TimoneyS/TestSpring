@@ -15,6 +15,7 @@ public class World {
         
         ApplicationContext context = new AnnotationConfigApplicationContext(com.ray.world.WorldConfig.class);
         
+        @SuppressWarnings("unchecked")
         Factory<Cat> factory = (Factory<Cat>) context.getBean("catFactory");
         
         Out.p(factory.create("Kitty", "pink", Sex.Female));
