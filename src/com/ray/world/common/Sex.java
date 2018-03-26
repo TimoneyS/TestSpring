@@ -11,6 +11,11 @@ public enum Sex {
         this.value = value;
     }
     
+    public static Sex get(int value) {
+        if (value == Sex.Male.value) return Sex.Male;
+        else return Sex.Female;
+    }
+    
     public String getSymbol() {
         return symbol;
     }

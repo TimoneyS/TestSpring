@@ -1,11 +1,8 @@
 package com.ray.world.manager.alive.animal;
 
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 
 import com.ray.util.io.Out;
@@ -29,6 +26,7 @@ public class CatManager {
         } catch (Throwable e) {
             Out.p("Cat Manager find the cat create failure");
         }
+        
         return null;
         
     }
