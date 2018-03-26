@@ -37,7 +37,6 @@ public class TestDataSource {
             rs.next();
             Assert.assertEquals(rs.getString(2), "snoopy");
             
-            
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -52,6 +51,5 @@ public class TestDataSource {
             e.printStackTrace();
         }
     }
-    
     
 }

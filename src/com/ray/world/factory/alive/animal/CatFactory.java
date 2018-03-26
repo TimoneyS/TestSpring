@@ -2,8 +2,8 @@ package com.ray.world.factory.alive.animal;
 
 import org.springframework.stereotype.Component;
 
-import com.ray.world.alive.animal.Cat;
 import com.ray.world.common.Sex;
+import com.ray.world.data.entity.alive.animal.Cat;
 import com.ray.world.factory.Factory;
 
 @Component("catFactory")

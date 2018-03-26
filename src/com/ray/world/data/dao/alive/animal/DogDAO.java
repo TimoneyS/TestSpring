@@ -1,6 +1,6 @@
-package com.ray.world.alive.animal.dao;
+package com.ray.world.data.dao.alive.animal;
 
-import com.ray.world.alive.animal.entity.Dog;
+import com.ray.world.data.entity.alive.animal.Dog;
 
 public interface DogDAO {
     public Dog getDog();

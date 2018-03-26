@@ -1,4 +1,4 @@
-package com.ray.world.manager;
+package com.ray.world.manager.alive.animal;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;

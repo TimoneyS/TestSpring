@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
-import com.ray.world.manager.CatManager;
+import com.ray.world.manager.alive.animal.CatManager;
 
 @Configuration
 @EnableAspectJAutoProxy

@@ -1,4 +1,4 @@
-package com.ray.world.alive.animal.entity;
+package com.ray.world.data.entity.alive.animal;
 
 import java.util.Date;
 

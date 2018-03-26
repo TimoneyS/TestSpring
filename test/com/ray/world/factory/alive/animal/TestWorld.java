@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.ray.world.alive.animal.Cat;
 import com.ray.world.common.Sex;
+import com.ray.world.data.entity.alive.animal.Cat;
 import com.ray.world.factory.alive.animal.CatFactory;
 
 @RunWith(SpringJUnit4ClassRunner.class)

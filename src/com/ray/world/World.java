@@ -4,8 +4,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.ray.util.io.Out;
-import com.ray.world.alive.animal.Cat;
 import com.ray.world.common.Sex;
+import com.ray.world.data.entity.alive.animal.Cat;
 import com.ray.world.factory.Factory;
 
 public class World {

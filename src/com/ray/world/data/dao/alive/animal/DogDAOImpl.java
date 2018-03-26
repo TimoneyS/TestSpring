@@ -1,7 +1,6 @@
-package com.ray.world.alive.animal.dao.impl;
+package com.ray.world.data.dao.alive.animal;
 
-import com.ray.world.alive.animal.dao.DogDAO;
-import com.ray.world.alive.animal.entity.Dog;
+import com.ray.world.data.entity.alive.animal.Dog;
 
 public class DogDAOImpl implements DogDAO {
 
