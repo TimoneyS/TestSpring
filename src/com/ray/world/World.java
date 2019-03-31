@@ -7,6 +7,7 @@ import com.ray.io.Out;
 import com.ray.world.common.Sex;
 import com.ray.world.data.entity.alive.animal.Cat;
 import com.ray.world.factory.Factory;
+import com.ray.world.factory.alive.animal.CatFactory;
 
 public class World {
     
@@ -15,8 +16,7 @@ public class World {
         
         ApplicationContext context = new AnnotationConfigApplicationContext(com.ray.world.WorldConfig.class);
         
-        @SuppressWarnings("unchecked")
-        Factory<Cat> factory = (Factory<Cat>) context.getBean("catFactory");
+        Factory<Cat> factory = context.getBean(CatFactory.class);
         
         Out.p(factory.create("Kitty", "pink", Sex.Female));
         
