@@ -1,4 +1,4 @@
-package com.ray.world.common;
+package com.rays.common;
 
 public enum Sex {
     Male("Male", 1), Female("Femal", 2);

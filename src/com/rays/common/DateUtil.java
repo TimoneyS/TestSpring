@@ -1,4 +1,4 @@
-package com.ray.world.common;
+package com.rays.common;
 
 import java.util.Date;
 
