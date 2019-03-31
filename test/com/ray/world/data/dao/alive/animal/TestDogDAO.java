@@ -2,13 +2,13 @@ package com.ray.world.data.dao.alive.animal;
 
 import java.util.Date;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.ray.util.Assert;
 import com.ray.world.common.Sex;
 import com.ray.world.data.entity.alive.animal.Dog;
 
@@ -35,7 +35,7 @@ public class TestDogDAO {
     public void testGetDogById() {
         Dog d = dogDao.getDogById(1);
         
-        Assert.assertEqual(d.getName(), "Little Black");
+        Assert.assertEquals(d.getName(), "Little Black");
         
     }
     

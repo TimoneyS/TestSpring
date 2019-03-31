@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.ray.util.io.Out;
+import com.ray.io.Out;
 
 public class MariaDBConn {  
     final String DBDRIVER = "org.mariadb.jdbc.Driver";

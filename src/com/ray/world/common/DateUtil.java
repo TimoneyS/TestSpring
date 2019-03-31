@@ -2,8 +2,8 @@ package com.ray.world.common;
 
 import java.util.Date;
 
-import com.ray.time.Time;
-import com.ray.util.io.Out;
+import com.ray.io.Out;
+import com.ray.util.TimeUtil;
 
 public class DateUtil {
 
@@ -48,7 +48,7 @@ public class DateUtil {
     public static void main(String[] args) {
         DateUtil.TIME_SPEED = DateUtil.SEC_1_DAY;
         
-        Date t = Time.create(2018, 3, 20, 16, 00, 30);
+        Date t = TimeUtil.create(2018, 3, 20, 16, 00, 30);
 
         Out.p(getAge(t));
 

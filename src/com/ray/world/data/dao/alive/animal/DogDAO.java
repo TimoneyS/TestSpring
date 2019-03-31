@@ -6,7 +6,6 @@ import com.ray.world.data.entity.alive.animal.Dog;
 
 public interface DogDAO {
     
-    
     public List<Dog> getDogsByName(String name);
     public Dog getDogById(Integer id);
     public void createDog(Dog dog);

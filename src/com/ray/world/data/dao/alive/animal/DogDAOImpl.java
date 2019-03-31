@@ -31,6 +31,7 @@ public class DogDAOImpl implements DogDAO {
             return d;
         }
 
+
     }
 
     private static String INSET_DOG          = "insert into dog (id, name, birthday, color, sex) values (?, ?, ?, ?, ?)";

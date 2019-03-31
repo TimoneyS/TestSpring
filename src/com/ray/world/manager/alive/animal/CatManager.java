@@ -5,7 +5,7 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 
-import com.ray.util.io.Out;
+import com.ray.io.Out;
 
 @Aspect
 public class CatManager {
