@@ -9,6 +9,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.rays.common.JavaConfig;
+import com.rays.entity.Dog;
+import com.rays.entity.Pet;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes= {JavaConfig.class})
@@ -19,6 +21,11 @@ public class TestCommon {
     
     @Test
     public void test() {
+        
+        Pet p = context.getBean(Dog.class);
+        
+        p.play();
+        
         
     }
     
