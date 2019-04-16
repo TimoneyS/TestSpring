@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.ray.io.Out;
 import com.rays.common.JavaConfig;
 import com.rays.entity.Dog;
+import com.rays.entity.Listener;
 import com.rays.entity.Pet;
 import com.rays.entity.PetMaster;
 
@@ -31,6 +32,10 @@ public class TestCommon {
         Out.sep();
         
         p2.play(p1);
+        
+        Out.sep();
+        Listener l = (Listener)p1;
+        l.listener();
         
     }
     
