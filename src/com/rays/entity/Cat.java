@@ -19,4 +19,15 @@ public class Cat implements Pet {
         Out.p("Cat " + name + " eating");
     }
 
+    @Override
+    @Human
+    public void play(Pet obj) {
+        Out.p("Cat " + name + " playing with Pet " + obj);        
+    }
+
+    @Override
+    public void play(PetMaster obj) {
+        Out.p("Cat " + name + " playing with PetMaster " + obj);        
+    }
+
 }
