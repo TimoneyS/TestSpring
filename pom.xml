@@ -1,5 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.ray</groupId>
@@ -11,12 +12,8 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-        <ims_version>1.2.4-SNAPSHOT</ims_version>
-        <ams_version>1.2.2-rm-snapshot</ams_version>
-        <easyframe_version>1.7.7-RELEASE</easyframe_version>
-        <easybuilder_maven_plugin_version>1.7.6-RELEASE</easybuilder_maven_plugin_version>
-        <jdk.source.version>1.7</jdk.source.version>
-        <jdk.target.version>1.7</jdk.target.version>
+        <jdk.source.version>1.8</jdk.source.version>
+        <jdk.target.version>1.8</jdk.target.version>
         <encoding.format>UTF-8</encoding.format>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -101,7 +98,23 @@
 		    <artifactId>commons-dbcp</artifactId>
 		    <version>1.4</version>
 		</dependency>
-
+    
 	</dependencies>
+	
+	<build>
+	   <plugins>  
+	        <plugin>    
+	            <groupId>org.apache.maven.plugins</groupId>    
+	            <artifactId>maven-compiler-plugin</artifactId>    
+	            <version>3.1</version>    
+	            <configuration>    
+	                <source>1.8</source>    
+	                <target>1.8</target>    
+	            </configuration>    
+	         </plugin>   
+	    </plugins>
+	
+	</build>
+	
 	
 </project>

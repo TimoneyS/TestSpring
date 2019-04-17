@@ -26,7 +26,7 @@ public class TestCommon {
     public void test() {
         
         
-        DispatcherServlet DispatcherServlet;
+        DispatcherServlet dispatcherServlet;
         
         Pet p1 = (Pet) context.getBean("dog");
         Pet p2 = (Pet) context.getBean("cat");
