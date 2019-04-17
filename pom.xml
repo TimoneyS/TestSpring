@@ -116,7 +116,6 @@
             <artifactId>RaysUtil</artifactId>
             <version>1.0.0</version>
         </dependency>
-        
     
 	</dependencies>
 	
@@ -135,6 +134,5 @@
 	    </plugins>
 	
 	</build>
-	
 	
 </project>
