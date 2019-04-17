@@ -1,4 +1,4 @@
-package com.ray.common;
+package com.rays.common;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
