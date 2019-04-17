@@ -71,9 +71,20 @@
 		    <groupId>javax.servlet</groupId>
 		    <artifactId>javax.servlet-api</artifactId>
 		    <version>4.0.1</version>
-		    <scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.1</version>
 		</dependency>
 
+		<!-- 添加jtl支持 -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
  
         <!-- AspectJ -->
         <dependency>
@@ -98,10 +109,19 @@
 		    <artifactId>commons-dbcp</artifactId>
 		    <version>1.4</version>
 		</dependency>
+		
+		<!-- 个人jar包 -->
+        <dependency>
+            <groupId>com.rays</groupId>
+            <artifactId>RaysUtil</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        
     
 	</dependencies>
 	
 	<build>
+	
 	   <plugins>  
 	        <plugin>    
 	            <groupId>org.apache.maven.plugins</groupId>    
