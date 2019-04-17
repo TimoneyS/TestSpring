@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.web.servlet.DispatcherServlet;
 
 import com.ray.io.Out;
 import com.rays.common.JavaConfig;
@@ -23,6 +24,9 @@ public class TestCommon {
     
     @Test
     public void test() {
+        
+        
+        DispatcherServlet DispatcherServlet;
         
         Pet p1 = (Pet) context.getBean("dog");
         Pet p2 = (Pet) context.getBean("cat");
