@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-                <a href="/">登陆</a>|<a href="/">注册</a>
+
+<a href="question/{123}">First Question</a>
+
 </body>
 </html>
