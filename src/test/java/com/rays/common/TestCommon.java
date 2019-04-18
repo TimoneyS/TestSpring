@@ -5,7 +5,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.web.servlet.DispatcherServlet;
 
 import com.ray.io.Out;
 import com.rays.entity.old.Listener;
@@ -19,9 +18,6 @@ public class TestCommon {
     
     @Test
     public void test() {
-        
-        
-        DispatcherServlet dispatcherServlet;
         
         Pet p1 = (Pet) context.getBean("dog");
         Pet p2 = (Pet) context.getBean("cat");
