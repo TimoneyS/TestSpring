@@ -9,6 +9,12 @@ public class Question {
     String describle;
     Date   createDate;
 
+    public Question(long i, String string, Date date) {
+        this.id = i;
+        this.title = string;
+        this.createDate = date;
+    }
+
     public Long getId() {
         return id;
     }
