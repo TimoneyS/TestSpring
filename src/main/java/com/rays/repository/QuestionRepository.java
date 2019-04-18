@@ -7,8 +7,6 @@ import com.rays.entity.Question;
 public interface QuestionRepository {
     
     public List<Question> selectQuestion(long max, int count);
-    
     public Question selectSingleQuestion(Long id);
-    public Question selectSingleQuestion2(Long id);
     
 }

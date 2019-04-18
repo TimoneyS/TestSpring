@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Question</title>
+<title>${question.title}</title>
 </head>
 <body>
-
+    
+    <h3>${question.title}</h3>
+    <h4>${question.describle}</h4>
+    
 </body>
 </html>

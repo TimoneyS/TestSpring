@@ -2,6 +2,8 @@ package com.rays.common;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+import com.ray.io.Out;
+
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
@@ -16,6 +18,7 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 
     @Override
     protected String[] getServletMappings() { // 映射 DispatchServlet
+        Out.p("映射 / 到 dispatchServlet");
         return new String[] {"/"};
     }
 

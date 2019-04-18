@@ -6,7 +6,10 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
 @EnableAspectJAutoProxy
-@ComponentScan(basePackageClasses = {com.rays.entity.old.PackageInfo.class})
+@ComponentScan(
+        basePackageClasses = {
+                com.rays.repository.PackageInfo.class
+        })
 public class RootConfig {
 
 }

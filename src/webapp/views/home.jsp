@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<a href="question/{123}">First Question</a>
+<a href="question/123">First Question</a>
 
 </body>
 </html>
