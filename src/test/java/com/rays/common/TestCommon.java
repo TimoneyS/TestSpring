@@ -8,8 +8,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.web.servlet.DispatcherServlet;
 
 import com.ray.io.Out;
-import com.rays.entity.Listener;
-import com.rays.entity.Pet;
+import com.rays.entity.old.Listener;
+import com.rays.entity.old.Pet;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 public class TestCommon {

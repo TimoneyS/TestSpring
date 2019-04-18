@@ -1,4 +1,4 @@
-package com.rays.entity;
+package com.rays.entity.old;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.DeclareParents;

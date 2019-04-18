@@ -1,4 +1,4 @@
-package com.rays.entity;
+package com.rays.entity.old;
 
 public interface Pet {
     public void play();

@@ -1,4 +1,4 @@
-package com.rays.entity;
+package com.rays.entity.old;
 
 import org.springframework.stereotype.Component;
 
