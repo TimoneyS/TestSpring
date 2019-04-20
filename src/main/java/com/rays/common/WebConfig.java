@@ -1,8 +1,11 @@
 package com.rays.common;
 
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -22,10 +25,22 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         return res;
     }
     
+    @Bean
+    public MessageSource messageSource() {
+        
+        
+        ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
+        messageSource.setBasename("classpath:message");
+        messageSource.setCacheSeconds(10);
+        return messageSource;
+    }
+    
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         // 将静态资源的请求转发到其他的Servlet来处理
         configurer.enable();
     }
+    
+    
     
 }

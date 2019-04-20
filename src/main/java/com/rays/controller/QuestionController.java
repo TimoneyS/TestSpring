@@ -26,26 +26,24 @@ public class QuestionController {
         Out.p("init QuestionController");
     }
     
-    @RequestMapping(method=RequestMethod.GET, value={"/form"})
-    public String questionForm() {
+    @RequestMapping(method=RequestMethod.GET, value={"/create"})
+    public String questionForm(Model model) {
+        Question question = new Question();
+        
+        Out.p("create question for form -> " + question);
+        
+        model.addAttribute("question", question);
         return "question_form";
     }
     
     @RequestMapping(method=RequestMethod.POST, value={"/create"})
-    public String createForm(@Valid Question question, Errors errors, Model model) {
+    public String createForm(@Valid Question question, Errors errors) {
         
-        
-        Out.p(errors.hasErrors());
+        Out.p("recive question from form -> " + question);
         
         if (errors.hasErrors()) {
             return "question_form";
         }
-        
-        Out.p(question.getTitle());
-        Out.p(question.getDescrible());
-        
-        model.addAttribute("question", question);
-        
         return "question_page";
     }
     
