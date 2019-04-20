@@ -11,5 +11,14 @@
     <h3>${question.title}</h3>
     <h4>${question.describle}</h4>
     
+    ${contextpath}
+    <%
+		//相对地址 
+		String path = request.getContextPath();
+		//绝对地址   http：//IP地址：端口号/页面名
+		String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;
+	%>
+	<%=basePath %>
+    ${basePath}
 </body>
 </html>

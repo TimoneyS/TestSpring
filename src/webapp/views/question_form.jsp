@@ -4,11 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>提个问题</title>
 </head>
 <body>
-    <a href="question/form">提问</a>
-<hr>
-    <a href="question/123">First Question</a>
+
+    <form action="create" method="POST">
+                            标题 <input type="text" name="title"/><br/><br/>
+                            内容 <textarea rows="5" cols="20" name="describle"></textarea>
+         <input type="submit">
+    </form>
+
 </body>
 </html>

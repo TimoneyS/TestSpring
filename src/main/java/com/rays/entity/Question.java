@@ -2,12 +2,22 @@ package com.rays.entity;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import com.ray.io.Out;
+
 public class Question {
 
     Long   id;
+    @NotNull
+    @Size(min=4, max=10)
     String title;
     String describle;
     Date   createDate;
+    
+    public Question() {
+    }
 
     public Question(long i, String string, Date date) {
         this.id = i;
@@ -28,6 +38,7 @@ public class Question {
     }
 
     public void setTitle(String title) {
+        Out.p("Question set title = " + title);
         this.title = title;
     }
 
