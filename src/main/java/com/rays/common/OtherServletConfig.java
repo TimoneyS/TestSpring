@@ -7,6 +7,8 @@ import javax.servlet.ServletException;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
+import com.ray.io.Out;
+
 /**
  * 其他 servlet filter listener 等的配置
  * @author rays1
@@ -16,6 +18,9 @@ public class OtherServletConfig implements WebApplicationInitializer {
 
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
+        
+        
+        Out.p("加载其他配置");
         
         FilterRegistration.Dynamic filter = servletContext.addFilter("CharacterEncodingFilter", CharacterEncodingFilter.class);
         filter.setInitParameter("encoding", "utf-8");

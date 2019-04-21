@@ -8,11 +8,13 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
+        Out.p("加载 root config");
         return new Class<?>[] {RootConfig.class};
     }
 
     @Override
     protected Class<?>[] getServletConfigClasses() { // 指定 servlet 配置类
+        Out.p("加载 servlet config");
         return new Class<?>[] {WebConfig.class};
     }
 
