@@ -12,6 +12,7 @@ import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
@@ -71,6 +72,8 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         configurer.enable();
     }
     
-    
+    @Override
+    public void configurePathMatch(PathMatchConfigurer configurer) {
+    }
     
 }
