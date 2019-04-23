@@ -33,8 +33,7 @@ public class UserController {
             return "user_reg_form"; 
         }
         
-        Out.p(user.getUserTitle());
-        profilePic.transferTo(new File("D:\\testDirectory\\app_upload\\" + profilePic.getOriginalFilename()));
+        profilePic.transferTo(new File("D:\\testDirectory\\user_resources\\" + profilePic.getOriginalFilename()));
         
         return "user_main_page";
     }
