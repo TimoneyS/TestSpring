@@ -10,6 +10,8 @@ import org.springframework.context.support.ReloadableResourceBundleMessageSource
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
@@ -23,6 +25,12 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 @ComponentScan(basePackageClasses= {com.rays.controller.PackageInfo.class})
 public class WebConfig extends WebMvcConfigurerAdapter {
     
+    @Override
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+        // 将静态资源的请求转发到其他的Servlet来处理
+        configurer.enable();
+    }
+    
     @Bean
     public InternalResourceViewResolver internalResourceViewResolver() { // JSP 视图解析器
         InternalResourceViewResolver res = new InternalResourceViewResolver();
@@ -30,6 +38,12 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         res.setSuffix(".jsp");
         res.setExposeContextBeansAsAttributes(true);
         return res;
+    }
+    
+    @Bean
+    public MultipartResolver multipartResolver() {
+        // 处理 mutipart
+        return new StandardServletMultipartResolver();
     }
     
     @Bean
@@ -64,12 +78,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         });
         
         return handler;
-    }
-    
-    @Override
-    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
-        // 将静态资源的请求转发到其他的Servlet来处理
-        configurer.enable();
     }
     
     @Override

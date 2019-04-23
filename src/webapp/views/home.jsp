@@ -8,9 +8,12 @@
 <title><s:message code="home.title"/></title>
 </head>
 <body>
-    <a href="question/create">提问</a>
-<hr>
     <s:url value="/question" var="questionUrl"/>
+    <s:url value="/user" var="userUrl"/>
+
+    <a href="${userUrl }/reg">注册</a> <a href="question/create">提问</a>
+<hr>
+
     <a href="${questionUrl }/123">First Question</a>
 </body>
 </html>

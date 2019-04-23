@@ -19,13 +19,18 @@ public class OtherServletConfig implements WebApplicationInitializer {
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
         
+//        DispatcherServlet ds = new DispatcherServlet();
+//        ServletRegistration.Dynamic servlet = servletContext.addServlet("appServlet", ds);
+//        
+//        servlet.addMapping("/");
+//        servlet.setMultipartConfig(new MultipartConfigElement("D:\\testDirectory\\app_upload"));
         
         Out.p("加载其他配置");
         
         FilterRegistration.Dynamic filter = servletContext.addFilter("CharacterEncodingFilter", CharacterEncodingFilter.class);
         filter.setInitParameter("encoding", "utf-8");
-        filter.addMappingForUrlPatterns(null, false, "/param");
-
+        filter.addMappingForUrlPatterns(null, false, "*");
+        
     }
 
 }
