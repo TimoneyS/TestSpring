@@ -10,7 +10,7 @@
 </head>
 <body>
     <s:url value="/user/reg" var="user_reg"/>
-    <sf:form method="POST" action="${user_reg }" commandName="user">
+    <sf:form method="POST" action="${user_reg }" commandName="user" enctype="multipart/form-data">
       <sf:errors path="*" element="div" cssClass="error"/>
       <sf:label path="username" cssErrorClass="error">用户名</sf:label>:
             <sf:input path="username" cssErrorClass="error"/><br/>
@@ -22,6 +22,7 @@
             <sf:input path="userJob" cssErrorClass="error"/><br/>
       <sf:label path="userTitle" cssErrorClass="error">个性签名</sf:label>:
             <sf:textarea path="userTitle" cssErrorClass="error"/><br/>
+       <label>上传头像：</label><input type="file" name="profilePic" accept="image/jpeg,image/png,image/gif" /><br/>
        <input type="submit" value="提交">
     </sf:form>
 
