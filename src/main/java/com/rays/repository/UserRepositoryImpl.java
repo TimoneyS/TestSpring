@@ -1,8 +1,11 @@
 package com.rays.repository;
 
+import org.springframework.stereotype.Component;
+
 import com.rays.entity.User;
 
-public class UserRepositiryImpl implements UserRepository {
+@Component
+public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public User selectUser(Integer id) {

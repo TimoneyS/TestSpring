@@ -13,7 +13,7 @@
     <h1>${user.realName }</h1>
     <h3>${user.userJob }</h3>
     <hr/>
-    <h3>${user.userTitle }s</h3>
+    <h3>${user.userTitle }</h3>
 
 </body>
 </html>
