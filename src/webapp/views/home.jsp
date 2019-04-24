@@ -9,7 +9,6 @@
 <title><s:message code="home.title"/></title>
 </head>
 <body>
-
     <s:url value="/question" var="questionUrl"/>
     <s:url value="/user" var="userUrl"/>
 
