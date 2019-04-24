@@ -1,4 +1,4 @@
-package com.rays.common;
+package com.rays.config;
 
 import javax.sql.DataSource;
 

@@ -15,6 +15,7 @@
 		<jdk.source.version>1.8</jdk.source.version>
 		<jdk.target.version>1.8</jdk.target.version>
 		<spring.version>4.3.7.RELEASE</spring.version>
+		<spring.security.version>4.2.12.RELEASE</spring.security.version>
 		<encoding.format>UTF-8</encoding.format>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -35,7 +36,7 @@
 			<scope>test</scope>
 		</dependency>
 		<!-- mockito -->
-		<dependency>
+		<dependency><!-- 模拟Web请求，用于测试mvc -->
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-all</artifactId>
 			<version>1.9.5</version>
@@ -80,19 +81,33 @@
 		</dependency>
 
 		<!-- Spring Security -->
-		<dependency>
+		<dependency><!-- 提供Spring Security基本库 -->
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-core</artifactId>
+		    <version>${spring.security.version}</version>
+		</dependency>
+        <dependency><!-- 包含通过XML和Java配置Spring Security的功能支持 -->
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+		<dependency><!-- 提供了Spring Security基于Filter的Web安全性支持 -->
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
-			<version>4.2.12.RELEASE</version>
+			<version>${spring.security.version}</version>
 		</dependency>
-
-		<!-- servlet -->
+		<dependency><!-- Spring Security的JSP标签库 -->
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+		
+		<!-- servlet 和 JSP -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>4.0.1</version>
 		</dependency>
-
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>javax.servlet.jsp-api</artifactId>
@@ -118,19 +133,19 @@
 			<version>1.8.13</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+		<!-- java 验证 -->
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
 			<version>2.0.1.Final</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+		<!-- 实现了java验证的包 -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
 			<version>6.0.13.Final</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.jboss.logging/jboss-logging -->
+		<!-- 日志 -->
 		<dependency>
 			<groupId>org.jboss.logging</groupId>
 			<artifactId>jboss-logging</artifactId>

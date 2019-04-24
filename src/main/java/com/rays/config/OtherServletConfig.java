@@ -1,4 +1,4 @@
-package com.rays.common;
+package com.rays.config;
 
 import javax.servlet.FilterRegistration;
 import javax.servlet.ServletContext;

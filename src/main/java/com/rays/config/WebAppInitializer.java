@@ -1,4 +1,4 @@
-package com.rays.common;
+package com.rays.config;
 
 import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletRegistration;
@@ -7,6 +7,12 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 import com.ray.io.Out;
 
+/**
+ * 替代webxml的配置
+ * 
+ * @author rays1
+ *
+ */
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
