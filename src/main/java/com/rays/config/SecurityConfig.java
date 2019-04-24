@@ -1,4 +1,4 @@
-package com.rays.config.security;
+package com.rays.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
