@@ -19,6 +19,9 @@ import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+
+import com.rays.common.Log;
+
 @SuppressWarnings("deprecation")
 @Configuration
 @EnableWebMvc // 启用Spring MVC
@@ -33,6 +36,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     
     @Bean
     public InternalResourceViewResolver internalResourceViewResolver() { // JSP 视图解析器
+        Log.p("加载 JSP 视图解析器");
         InternalResourceViewResolver res = new InternalResourceViewResolver();
         res.setPrefix("/views/");
         res.setSuffix(".jsp");
@@ -42,12 +46,14 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     
     @Bean
     public MultipartResolver multipartResolver() {
+        Log.p("加载 multi Part 解析器");
         // 处理 mutipart
         return new StandardServletMultipartResolver();
     }
     
     @Bean
     public MessageSource messageSource() {
+        Log.p("加载Message Souce");
         ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
         messageSource.setBasename("classpath:message");
         messageSource.setCacheSeconds(10);
@@ -56,13 +62,15 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     
     @Bean
     public StringHttpMessageConverter stringHttpMessageConverter() {
+        Log.p("加载 HttpMessageConverter");
         StringHttpMessageConverter convert = new StringHttpMessageConverter();
-        convert.setSupportedMediaTypes(Arrays.asList(new MediaType[] {MediaType.parseMediaType("application/json;charset=UTF-8")}));
+        convert.setSupportedMediaTypes(Arrays.asList(new MediaType[] {MediaType.parseMediaType("text/html;charset=UTF-8")}));
         return convert;
     }
     
     @Bean
     public MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter() {
+        
         MappingJackson2HttpMessageConverter convert = new MappingJackson2HttpMessageConverter();
         convert.setSupportedMediaTypes(Arrays.asList(new MediaType[] {MediaType.parseMediaType("application/json;charset=UTF-8")}));
         return convert;

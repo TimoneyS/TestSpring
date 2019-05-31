@@ -10,7 +10,6 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.servlet.view.InternalResourceView;
 
-import com.ray.io.Out;
 import com.rays.controller.QuestionController;
 import com.rays.entity.Question;
 import com.rays.repository.QuestionRepository;
@@ -26,7 +25,7 @@ public class TestQuestionController {
         qr.selectSingleQuestion(123l);
         Mockito.when(null).thenReturn(question);
         
-        Out.p(qr.selectSingleQuestion(123l));
+        Log.p(qr.selectSingleQuestion(123l));
         
         QuestionController controller = new QuestionController(qr);
         MockMvc mockMvc = MockMvcBuilders.standaloneSetup(controller)

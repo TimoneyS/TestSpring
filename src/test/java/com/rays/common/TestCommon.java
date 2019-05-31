@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.ray.io.Out;
 import com.rays.entity.old.Listener;
 import com.rays.entity.old.Pet;
 
@@ -24,11 +23,9 @@ public class TestCommon {
         
         p1.play(p2);
         
-        Out.sep();
         
         p2.play(p1);
         
-        Out.sep();
         Listener l = (Listener)p1;
         l.listener();
         

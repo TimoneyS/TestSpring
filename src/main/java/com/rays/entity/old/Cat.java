@@ -2,7 +2,7 @@ package com.rays.entity.old;
 
 import org.springframework.stereotype.Component;
 
-import com.ray.io.Out;
+import com.rays.common.Log;
 
 @Component
 public class Cat implements Pet {
@@ -11,23 +11,23 @@ public class Cat implements Pet {
     
     @Override
     public void play() {
-        Out.p("Cat " + name + " playing quietly");
+        Log.p("Cat " + name + " playing quietly");
     }
 
     @Override
     public void eat() {
-        Out.p("Cat " + name + " eating");
+        Log.p("Cat " + name + " eating");
     }
 
     @Override
     @Human
     public void play(Pet obj) {
-        Out.p("Cat " + name + " playing with Pet " + obj);        
+        Log.p("Cat " + name + " playing with Pet " + obj);        
     }
 
     @Override
     public void play(PetMaster obj) {
-        Out.p("Cat " + name + " playing with PetMaster " + obj);        
+        Log.p("Cat " + name + " playing with PetMaster " + obj);        
     }
 
 }

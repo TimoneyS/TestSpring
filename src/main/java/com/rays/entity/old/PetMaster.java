@@ -3,7 +3,7 @@ package com.rays.entity.old;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 
-import com.ray.io.Out;
+import com.rays.common.Log;
 
 @Aspect
 @Human
@@ -11,7 +11,7 @@ public class PetMaster {
     
     @Before("execution(** com.rays.entity.Pet.play(..)) && @annotation(com.rays.entity.Human)")
     public void beforePlay() {
-        Out.p("Some pet is playing, I guarantee that it will not be injured.");
+        Log.p("Some pet is playing, I guarantee that it will not be injured.");
     }
     
 //    @AfterReturning("execution(** com.rays.entity.Pet.play(..))")

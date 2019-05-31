@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.ray.io.Out;
+import com.rays.common.Log;
 import com.rays.common.exception.UserNotFoundException;
 import com.rays.entity.User;
 import com.rays.repository.UserRepository;
@@ -56,7 +56,7 @@ public class UserController {
             return "user_login_form"; 
         }
         model.addFlashAttribute("user", user);
-        Out.p("user login");
+        Log.p("user login");
         
         try {
             Thread.sleep(10000);
@@ -82,7 +82,7 @@ public class UserController {
     @ExceptionHandler(UserNotFoundException.class)
     public String exceptionHandler() {
         
-        Out.p("exceptionHandler");
+        Log.p("exceptionHandler");
         
         return "redirect:/home";
     }

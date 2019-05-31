@@ -8,6 +8,8 @@ import javax.validation.constraints.Size;
 public class Question {
 
     Long   id;
+    Long   authorId;
+    
     @NotNull
     @Size(min=4, max=10,message="{question.title.size}")
     String title;
@@ -67,4 +69,12 @@ public class Question {
         return super.hashCode();
     }
 
+    public Long getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(Long authorId) {
+        this.authorId = authorId;
+    }
+    
 }

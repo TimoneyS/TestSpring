@@ -2,33 +2,30 @@ package com.rays.config;
 
 import javax.servlet.ServletContext;
 
+import org.springframework.core.annotation.Order;
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 
-import com.ray.io.Out;
+import com.rays.common.Log;
 
 /**
  * 安全功能配置
  * @author rays1
  *
  */
+@Order(3)
 public class SecurityWebApplicationInitializer extends AbstractSecurityWebApplicationInitializer {
-
-    public SecurityWebApplicationInitializer() {
-        Out.p("加载 SecurityWebInitializer");
-    }
-    
     
     @Override
     protected void afterSpringSecurityFilterChain(ServletContext servletContext) {
         super.afterSpringSecurityFilterChain(servletContext);
-        Out.p("afterSpringSecurityFilterChain");
+        Log.p("afterSpringSecurityFilterChain");
     }
     
     @Override
     protected void beforeSpringSecurityFilterChain(ServletContext servletContext) {
         super.beforeSpringSecurityFilterChain(servletContext);
         
-        Out.p("beforeSpringSecurityFilterChain");
+        Log.p("beforeSpringSecurityFilterChain");
     }
     
 }
