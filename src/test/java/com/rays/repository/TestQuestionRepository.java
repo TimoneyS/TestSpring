@@ -19,8 +19,22 @@ public class TestQuestionRepository {
     
     @Test
     public void testSelectSingleQuestion() {
-        Question q = questionRepository.selectSingleQuestion(123L);
-        Assert.assertNotNull(q);
+        
+        questionRepository.selectSingleQuestion(123L);
+        
+        for (int i = 0; i < 5; i++) {
+            System.out.println("============== Test " + i + " ==========");
+            Question q = questionRepository.selectSingleQuestion(123L);
+            System.out.println(q);
+            Assert.assertNotNull(q);
+        }
+        
+    }
+    
+    public void testSelectQuestion() {
+        
+        questionRepository.selectQuestion(2, 2);
+        
     }
     
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+	<!-- the chinese char will lead to a exception by test cases under maven 
+		env , I don't know why. -->
+	<defaultCache memoryStoreEvictionPolicy="LFU"
+		overflowToDisk="false" eternal="true" maxElementsOnDisk="1000"
+		maxElementsInMemory="20000" />
+
+	<Cache name="questionCache" 
+	   maxBytesLocalHeap="50m"
+	   timeToLiveSeconds="100"
+	/>
+
+</ehcache>

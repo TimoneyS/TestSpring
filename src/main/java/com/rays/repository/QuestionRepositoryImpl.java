@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Component;
 
@@ -15,6 +16,7 @@ import com.rays.entity.Question;
 public class QuestionRepositoryImpl implements QuestionRepository {
 
     String QUERY_QUESTION_BY_ID = "select * from question where question_id = ?";
+    String QUERY_QUESTION       = "select * from question";
     
     @Autowired
     JdbcOperations jdbcOpt;
@@ -25,16 +27,20 @@ public class QuestionRepositoryImpl implements QuestionRepository {
     
     @Override
     public List<Question> selectQuestion(long max, int count) {
-        return null;
+        
+        List<Question> list = jdbcOpt.queryForList(QUERY_QUESTION, Question.class);
+        
+        return list;
     }
 
     @Override
+    @Cacheable(value="questionCache")
     public Question selectSingleQuestion(Long id) {
-        Question q = jdbcOpt.queryForObject(QUERY_QUESTION_BY_ID, this::mapRow, id);
+        Question q = jdbcOpt.queryForObject(QUERY_QUESTION_BY_ID, this::mapRow11, id);
         return q;
     }
     
-    public Question mapRow(ResultSet rs, int arg1) throws SQLException {
+    public Question mapRow11(ResultSet rs, int arg1) throws SQLException {
         Question q = new Question();
         q.setId(rs.getLong("question_id"));
         q.setTitle(rs.getString("question_title"));

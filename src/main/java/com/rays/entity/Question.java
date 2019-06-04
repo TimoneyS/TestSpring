@@ -8,14 +8,17 @@ import javax.validation.constraints.Size;
 public class Question {
 
     Long   id;
+    
     Long   authorId;
     
     @NotNull
     @Size(min=4, max=10,message="{question.title.size}")
     String title;
+    
     @NotNull
     @Size(min=4,message="{question.describle.size}")
     String describle;
+    
     Date   createDate;
     
     public Question() {
@@ -75,6 +78,15 @@ public class Question {
 
     public void setAuthorId(Long authorId) {
         this.authorId = authorId;
+    }
+    
+    @Override
+    public String toString() {
+        return "Question:\nid = " + id +
+                "\nauthorId = " + authorId +
+                "\ncreateDate = " + createDate +
+                "\ndescrible = " + describle +
+                "\ntitle = " + title;
     }
     
 }
