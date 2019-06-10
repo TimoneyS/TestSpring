@@ -15,8 +15,13 @@ import com.rays.entity.Question;
 @Component
 public class QuestionRepositoryImpl implements QuestionRepository {
 
-    String QUERY_QUESTION_BY_ID = "select * from question where question_id = ?";
-    String QUERY_QUESTION       = "select * from question";
+    private String QUERY_QUESTION_BY_ID = "select * from question where question_id = ?";
+    private String QUERY_QUESTION       = "select * from question";
+    private String INSERT_QUESTION      = "insert into question ( question_id, question_title, question_content, author_id, create_date)"
+            + " values ( ?, ?, ?, ?, ? )";
+    
+   
+    
     
     @Autowired
     JdbcOperations jdbcOpt;
@@ -48,6 +53,20 @@ public class QuestionRepositoryImpl implements QuestionRepository {
         q.setCreateDate(rs.getDate("create_date"));
         q.setAuthorId(rs.getLong("author_id"));
         return q;
+    }
+
+    @Override
+    public boolean addNewQuestion(Question question) {
+        
+        jdbcOpt.update(INSERT_QUESTION, 
+                question.getId(),
+                question.getTitle(),
+                question.getDescrible(),
+                question.getAuthorId(),
+                question.getCreateDate()
+                );
+        
+        return true;
     }
 
 }

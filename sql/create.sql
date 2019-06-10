@@ -48,6 +48,9 @@ ON UPDATE NO ACTION;
 INSERT INTO sequence VALUES ('N_USER_SEQ', 0, 1);
 SELECT SETVAL('N_USER_SEQ', 10000);
 
+-- 问题序列
+INSERT INTO sequence VALUES ('N_QUES_SEQ', 0, 1);
+
 -- 插入默认用户
 insert into n_user(user_id, real_name, username, password, user_job, user_title)
     SELECT NEXTVAL('N_USER_SEQ'),

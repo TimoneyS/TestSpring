@@ -12,7 +12,7 @@ import com.rays.entity.old.Cat;
 
 @Configuration
 @EnableAspectJAutoProxy
-@Import(value= { DatabaseConfig.class, SecurityConfig.class, CacheConfig.class})
+@Import(value= { DatabaseConfig.class, SecurityConfig.class, CacheConfig.class, TxConfig.class})
 public class RootConfig {
     
     @Bean

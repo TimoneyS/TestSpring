@@ -1,5 +1,7 @@
 package com.rays.repository;
 
+import java.util.Date;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +19,9 @@ public class TestQuestionRepository {
     @Autowired
     QuestionRepository questionRepository;
     
-    @Test
+    @Autowired
+    SequenceRepository sequenceDao;
+    
     public void testSelectSingleQuestion() {
         
         questionRepository.selectSingleQuestion(123L);
@@ -29,6 +33,18 @@ public class TestQuestionRepository {
             Assert.assertNotNull(q);
         }
         
+    }
+    
+    @Test
+    public void testAddQuestion() {
+        Question question = new Question();
+        question.setId(sequenceDao.getSequenceNextval("N_QUES_SEQ"));
+        question.setAuthorId(10004L);
+        question.setTitle("有没有什么好玩的游戏");
+        question.setDescrible("rtrtrtrt");
+        question.setCreateDate(new Date());
+        
+        questionRepository.addNewQuestion(question);
     }
     
     public void testSelectQuestion() {

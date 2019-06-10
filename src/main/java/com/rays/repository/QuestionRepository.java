@@ -8,5 +8,6 @@ public interface QuestionRepository {
     
     public List<Question> selectQuestion(long max, int count);
     public Question selectSingleQuestion(Long id);
+    public boolean addNewQuestion(Question question);
     
 }
