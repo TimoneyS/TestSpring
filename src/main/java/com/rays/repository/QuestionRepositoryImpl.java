@@ -5,9 +5,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 import com.rays.common.Log;
 import com.rays.entity.Question;
@@ -19,9 +19,6 @@ public class QuestionRepositoryImpl implements QuestionRepository {
     private String QUERY_QUESTION       = "select * from question";
     private String INSERT_QUESTION      = "insert into question ( question_id, question_title, question_content, author_id, create_date)"
             + " values ( ?, ?, ?, ?, ? )";
-    
-   
-    
     
     @Autowired
     JdbcOperations jdbcOpt;
@@ -39,7 +36,6 @@ public class QuestionRepositoryImpl implements QuestionRepository {
     }
 
     @Override
-    @Cacheable(value="questionCache")
     public Question selectSingleQuestion(Long id) {
         Question q = jdbcOpt.queryForObject(QUERY_QUESTION_BY_ID, this::mapRow11, id);
         return q;
@@ -54,6 +50,15 @@ public class QuestionRepositoryImpl implements QuestionRepository {
         q.setAuthorId(rs.getLong("author_id"));
         return q;
     }
+    
+    @Override
+    public void updateQuestion(Question question) {
+        
+        
+        
+        
+        
+    }
 
     @Override
     public boolean addNewQuestion(Question question) {
@@ -66,7 +71,27 @@ public class QuestionRepositoryImpl implements QuestionRepository {
                 question.getCreateDate()
                 );
         
+        
+        int flag = (int) (question.getId() % 2); 
+        
+        
+        System.out.println(Thread.currentThread().getName() + " " + TransactionAspectSupport.currentTransactionStatus());     
+           
+        try {
+            
+            if (flag == 1) {
+                Thread.sleep(5000);
+                TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();                
+            } else {
+                Thread.sleep(10000);
+            }
+            
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return true;
     }
+
+
 
 }
