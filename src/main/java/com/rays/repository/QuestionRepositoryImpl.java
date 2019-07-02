@@ -7,7 +7,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 import com.rays.common.Log;
 import com.rays.entity.Question;
@@ -19,6 +18,10 @@ public class QuestionRepositoryImpl implements QuestionRepository {
     private String QUERY_QUESTION       = "select * from question";
     private String INSERT_QUESTION      = "insert into question ( question_id, question_title, question_content, author_id, create_date)"
             + " values ( ?, ?, ?, ?, ? )";
+    private String UPDATE_QUESTION      = "update question set "
+            + "question_title = ?,"
+            + "question_content = ?"
+            + "where question_id = ?";
     
     @Autowired
     JdbcOperations jdbcOpt;
@@ -53,16 +56,15 @@ public class QuestionRepositoryImpl implements QuestionRepository {
     
     @Override
     public void updateQuestion(Question question) {
-        
-        
-        
-        
-        
+        jdbcOpt.update(UPDATE_QUESTION, 
+                question.getTitle(),
+                question.getDescrible(),
+                question.getId()
+                );
     }
 
     @Override
     public boolean addNewQuestion(Question question) {
-        
         jdbcOpt.update(INSERT_QUESTION, 
                 question.getId(),
                 question.getTitle(),
@@ -70,25 +72,6 @@ public class QuestionRepositoryImpl implements QuestionRepository {
                 question.getAuthorId(),
                 question.getCreateDate()
                 );
-        
-        
-        int flag = (int) (question.getId() % 2); 
-        
-        
-        System.out.println(Thread.currentThread().getName() + " " + TransactionAspectSupport.currentTransactionStatus());     
-           
-        try {
-            
-            if (flag == 1) {
-                Thread.sleep(5000);
-                TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();                
-            } else {
-                Thread.sleep(10000);
-            }
-            
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         return true;
     }
 

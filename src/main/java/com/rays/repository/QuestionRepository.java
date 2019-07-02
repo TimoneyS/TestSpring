@@ -19,6 +19,7 @@ public interface QuestionRepository {
     @Transactional(isolation=Isolation.DEFAULT, propagation=Propagation.REQUIRED)
     public boolean addNewQuestion(Question question);
     
+    @Transactional(isolation=Isolation.DEFAULT, propagation=Propagation.REQUIRED)
     public void updateQuestion(Question question);
     
 }

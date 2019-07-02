@@ -1,9 +1,6 @@
 package com.rays.repository;
 
 import java.util.Date;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -11,7 +8,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 import com.rays.config.RootConfig;
 import com.rays.entity.Question;
@@ -21,54 +17,48 @@ import com.rays.entity.Question;
 public class TestQuestionRepository {
 
     @Autowired
-    QuestionRepository questionRepository;
+    QuestionRepository questionDao;
     
     @Autowired
     SequenceRepository sequenceDao;
     
     public void testSelectSingleQuestion() {
         
-        questionRepository.selectSingleQuestion(123L);
+        questionDao.selectSingleQuestion(123L);
         
         for (int i = 0; i < 5; i++) {
             System.out.println("============== Test " + i + " ==========");
-            Question q = questionRepository.selectSingleQuestion(123L);
+            Question q = questionDao.selectSingleQuestion(123L);
             System.out.println(q);
             Assert.assertNotNull(q);
         }
         
     }
     
-    @Test
     public void testAddQuestion() {
+        Question question = new Question();
+        question.setId(sequenceDao.getSequenceNextval("N_QUES_SEQ"));
+        question.setAuthorId(10004L);
+        question.setTitle("有没有什么好玩的游戏");
+        question.setDescrible("现在游戏荒了，求好玩的游戏啊。");
+        question.setCreateDate(new Date());
+        questionDao.addNewQuestion(question);
+    }
+    
+    @Test
+    public void testUpdateQuestion() {
         
-        Runnable r = () -> {
-            Question question = new Question();
-            question.setId(sequenceDao.getSequenceNextval("N_QUES_SEQ"));
-            question.setAuthorId(10004L);
-            question.setTitle("有没有什么好玩的游戏");
-            question.setDescrible("现在游戏荒了，求好玩的游戏啊。");
-            question.setCreateDate(new Date());
-            questionRepository.addNewQuestion(question);
-        };
+        Question question = questionDao.selectSingleQuestion(26L);
         
-        ExecutorService es = Executors.newFixedThreadPool(2);
+        question.setDescrible("现在出现游戏荒了，不知道有什么好玩的游戏。");
         
-        es.submit(r);
-        es.submit(r);
+        questionDao.updateQuestion(question);
         
-        try {
-            es.awaitTermination(15, TimeUnit.SECONDS);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        
-        System.out.println("testAddQuestion End");
     }
     
     public void testSelectQuestion() {
         
-        questionRepository.selectQuestion(2, 2);
+        questionDao.selectQuestion(2, 2);
         
     }
     
