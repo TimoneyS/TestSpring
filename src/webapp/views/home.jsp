@@ -23,6 +23,6 @@
     
     <hr>
 	    <a href="question/create"><button>提问</button></a><br/>
-	    <a href="${questionUrl }/123">First Question</a>
+	    <a href="${questionUrl }/26">First Question</a>
 </body>
 </html>
