@@ -22,7 +22,6 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.rays.common.Log;
 
-@SuppressWarnings("deprecation")
 @Configuration
 @EnableWebMvc // 启用Spring MVC
 @ComponentScan(basePackageClasses= {com.rays.controller.PackageInfo.class})
@@ -76,6 +75,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         return convert;
     }
     
+    @SuppressWarnings("deprecation")
     @Bean
     public AnnotationMethodHandlerAdapter annotationMethodHandlerAdapter() {
         AnnotationMethodHandlerAdapter handler = new AnnotationMethodHandlerAdapter();
