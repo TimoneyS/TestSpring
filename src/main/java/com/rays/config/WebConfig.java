@@ -22,6 +22,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.rays.common.Log;
 
+@SuppressWarnings("deprecation")
 @Configuration
 @EnableWebMvc // 启用Spring MVC
 @ComponentScan(basePackageClasses= {com.rays.controller.PackageInfo.class})
