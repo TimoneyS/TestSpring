@@ -76,7 +76,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         return convert;
     }
     
-    @SuppressWarnings("deprecation")
     @Bean
     public AnnotationMethodHandlerAdapter annotationMethodHandlerAdapter() {
         AnnotationMethodHandlerAdapter handler = new AnnotationMethodHandlerAdapter();
