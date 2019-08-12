@@ -1,4 +1,4 @@
-package com.rays.common;
+package com.rays.controller;
 
 import java.util.Date;
 
@@ -10,9 +10,10 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.servlet.view.InternalResourceView;
 
+import com.rays.common.Log;
 import com.rays.controller.QuestionController;
+import com.rays.dao.QuestionDao;
 import com.rays.entity.Question;
-import com.rays.repository.QuestionRepository;
 
 public class TestQuestionController {
 
@@ -20,7 +21,7 @@ public class TestQuestionController {
     public void testQuestionGet() throws Exception {
         
         Question question = createQuestion(123l);
-        QuestionRepository qr = Mockito.mock(QuestionRepository.class);
+        QuestionDao qr = Mockito.mock(QuestionDao.class);
         
         qr.selectSingleQuestion(123l);
         Mockito.when(null).thenReturn(question);

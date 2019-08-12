@@ -11,17 +11,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.rays.common.Log;
+import com.rays.dao.QuestionDao;
 import com.rays.entity.Question;
-import com.rays.repository.QuestionRepository;
 
 @Controller
 @RequestMapping("/question")
 public class QuestionController {
 
-    QuestionRepository questionRepository;
+    QuestionDao questionRepository;
     
     @Autowired
-    public QuestionController(QuestionRepository questionRepository) {
+    public QuestionController(QuestionDao questionRepository) {
         this.questionRepository = questionRepository;
         Log.p("init QuestionController");
     }

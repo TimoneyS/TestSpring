@@ -10,7 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 @Configuration
-@ComponentScan(basePackageClasses= {com.rays.repository.PackageInfo.class})
+@ComponentScan(basePackageClasses= {com.rays.dao.PackageInfo.class})
 public class DatabaseConfig {
     
     @Bean

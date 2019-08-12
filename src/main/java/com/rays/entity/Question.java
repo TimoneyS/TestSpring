@@ -8,7 +8,6 @@ import javax.validation.constraints.Size;
 public class Question {
 
     Long   id;
-    
     Long   authorId;
     
     @NotNull

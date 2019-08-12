@@ -1,4 +1,4 @@
-package com.rays.repository;
+package com.rays.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,7 +12,7 @@ import com.rays.common.Log;
 import com.rays.entity.Question;
 
 @Component
-public class QuestionRepositoryImpl implements QuestionRepository {
+public class QuestionDaoImpl implements QuestionDao {
 
     private String QUERY_QUESTION_BY_ID = "select * from question where question_id = ?";
     private String QUERY_QUESTION       = "select * from question";
@@ -26,7 +26,7 @@ public class QuestionRepositoryImpl implements QuestionRepository {
     @Autowired
     JdbcOperations jdbcOpt;
     
-    public QuestionRepositoryImpl() {
+    public QuestionDaoImpl() {
         Log.p("init QuestionRepositoryImpl");
     }
     

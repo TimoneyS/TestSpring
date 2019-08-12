@@ -8,13 +8,14 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.rays.config.RootConfig;
+import com.rays.dao.SequenceDao;
 
 @RunWith(value = SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {RootConfig.class})
 public class TestSequenceRepositiry {
 
     @Autowired
-    SequenceRepository repo;
+    SequenceDao repo;
     
     @Test
     public void testSelectSingleQuestion() {

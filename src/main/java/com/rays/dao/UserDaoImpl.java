@@ -1,11 +1,11 @@
-package com.rays.repository;
+package com.rays.dao;
 
 import org.springframework.stereotype.Component;
 
 import com.rays.entity.User;
 
 @Component
-public class UserRepositoryImpl implements UserRepository {
+public class UserDaoImpl implements UserDao {
 
     @Override
     public User selectUser(Integer id) {

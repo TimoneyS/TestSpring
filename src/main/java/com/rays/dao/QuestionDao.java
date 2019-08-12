@@ -1,4 +1,4 @@
-package com.rays.repository;
+package com.rays.dao;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.rays.entity.Question;
 
-public interface QuestionRepository {
+public interface QuestionDao {
     
     public List<Question> selectQuestion(long max, int count);
     

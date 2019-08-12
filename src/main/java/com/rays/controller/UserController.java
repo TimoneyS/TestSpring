@@ -19,15 +19,15 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.rays.common.Log;
 import com.rays.common.exception.UserNotFoundException;
+import com.rays.dao.UserDao;
 import com.rays.entity.User;
-import com.rays.repository.UserRepository;
 
 @Controller
 @RequestMapping("/user")
 public class UserController {
     
     @Autowired
-    UserRepository userRepository;
+    UserDao userRepository;
     
     @RequestMapping(value="/reg", method=RequestMethod.GET)
     public String userReg(Model model) {

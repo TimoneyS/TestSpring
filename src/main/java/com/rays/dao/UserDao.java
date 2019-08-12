@@ -1,8 +1,8 @@
-package com.rays.repository;
+package com.rays.dao;
 
 import com.rays.entity.User;
 
-public interface UserRepository {
+public interface UserDao {
 
     public User selectUser(Integer id);
     public User selectUser(String username);

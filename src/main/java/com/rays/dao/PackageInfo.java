@@ -1,4 +1,4 @@
-package com.rays.repository;
+package com.rays.dao;
 
 public interface PackageInfo {
 

@@ -10,6 +10,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.rays.config.RootConfig;
+import com.rays.dao.QuestionDao;
+import com.rays.dao.SequenceDao;
 import com.rays.entity.Question;
 
 @RunWith(value = SpringJUnit4ClassRunner.class)
@@ -17,10 +19,10 @@ import com.rays.entity.Question;
 public class TestQuestionRepository {
 
     @Autowired
-    QuestionRepository questionDao;
+    QuestionDao questionDao;
     
     @Autowired
-    SequenceRepository sequenceDao;
+    SequenceDao sequenceDao;
     
     public void testSelectSingleQuestion() {
         

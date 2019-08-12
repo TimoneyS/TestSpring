@@ -29,6 +29,15 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
+        <!-- h2 数据库 -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.199</version>
+            <scope>test</scope>
+        </dependency>
+		
+		
 		<!-- mockito -->
 		<dependency><!-- 模拟Web请求，用于测试mvc -->
 			<groupId>org.mockito</groupId>
