@@ -52,7 +52,7 @@ public class QuestionController {
         
         Log.p("get question " + questionId);
         
-        model.addAttribute("question", questionRepository.selectSingleQuestion(questionId));
+        model.addAttribute("question", questionRepository.querySingle(questionId));
         
         return "question_page";
     }

@@ -11,15 +11,15 @@ import com.rays.entity.Question;
 
 public interface QuestionDao {
     
-    public List<Question> selectQuestion(long max, int count);
+    public List<Question> queryList(int count);
     
     @Cacheable(value="questionCache")
-    public Question selectSingleQuestion(Long id);
+    public Question querySingle(Long id);
     
     @Transactional(isolation=Isolation.DEFAULT, propagation=Propagation.REQUIRED)
-    public boolean addNewQuestion(Question question);
+    public boolean add(Question question);
     
     @Transactional(isolation=Isolation.DEFAULT, propagation=Propagation.REQUIRED)
-    public void updateQuestion(Question question);
+    public void update(Question question);
     
 }

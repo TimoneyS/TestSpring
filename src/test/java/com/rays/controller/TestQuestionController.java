@@ -20,10 +20,10 @@ public class TestQuestionController {
         Question question = createQuestion(123l);
         QuestionDao qr = Mockito.mock(QuestionDao.class);
         
-        qr.selectSingleQuestion(123l);
+        qr.querySingle(123l);
         Mockito.when(null).thenReturn(question);
         
-        Log.p(qr.selectSingleQuestion(123l));
+        Log.p(qr.querySingle(123l));
         
         QuestionController controller = new QuestionController(qr);
         MockMvc mockMvc = MockMvcBuilders.standaloneSetup(controller)

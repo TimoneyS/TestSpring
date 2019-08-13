@@ -26,11 +26,11 @@ public class TestQuestionRepository {
     
     public void testSelectSingleQuestion() {
         
-        questionDao.selectSingleQuestion(123L);
+        questionDao.querySingle(123L);
         
         for (int i = 0; i < 5; i++) {
             System.out.println("============== Test " + i + " ==========");
-            Question q = questionDao.selectSingleQuestion(123L);
+            Question q = questionDao.querySingle(123L);
             System.out.println(q);
             Assert.assertNotNull(q);
         }
@@ -44,17 +44,17 @@ public class TestQuestionRepository {
         question.setTitle("有没有什么好玩的游戏");
         question.setContent("现在游戏荒了，求好玩的游戏啊。");
         question.setCreateDate(new Date());
-        questionDao.addNewQuestion(question);
+        questionDao.add(question);
     }
     
     @Test
     public void testUpdateQuestion() {
         
-        Question question = questionDao.selectSingleQuestion(26L);
+        Question question = questionDao.querySingle(26L);
         
         question.setContent("现在出现游戏荒了，不知道有什么好玩的游戏。");
         
-        questionDao.updateQuestion(question);
+        questionDao.update(question);
         
     }
     

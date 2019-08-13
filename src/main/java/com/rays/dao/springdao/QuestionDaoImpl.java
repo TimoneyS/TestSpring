@@ -32,7 +32,7 @@ public class QuestionDaoImpl implements QuestionDao {
     }
     
     @Override
-    public List<Question> selectQuestion(long max, int count) {
+    public List<Question> queryList(int count) {
         
         List<Question> list = jdbcOpt.queryForList(QUERY_QUESTION, Question.class);
         
@@ -40,7 +40,7 @@ public class QuestionDaoImpl implements QuestionDao {
     }
 
     @Override
-    public Question selectSingleQuestion(Long id) {
+    public Question querySingle(Long id) {
         Question q = jdbcOpt.queryForObject(QUERY_QUESTION_BY_ID, this::mapRow11, id);
         return q;
     }
@@ -56,7 +56,7 @@ public class QuestionDaoImpl implements QuestionDao {
     }
     
     @Override
-    public void updateQuestion(Question question) {
+    public void update(Question question) {
         jdbcOpt.update(UPDATE_QUESTION, 
                 question.getTitle(),
                 question.getContent(),
@@ -65,7 +65,7 @@ public class QuestionDaoImpl implements QuestionDao {
     }
 
     @Override
-    public boolean addNewQuestion(Question question) {
+    public boolean add(Question question) {
         jdbcOpt.update(INSERT_QUESTION, 
                 question.getId(),
                 question.getTitle(),
