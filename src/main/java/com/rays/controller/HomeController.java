@@ -21,7 +21,7 @@ public class HomeController {
     @RequestMapping(method=RequestMethod.GET) // 声明处理 GET 方法
     public String homePage(Model model) {
         
-        List<Question> questionList = questionDao.selectQuestion(10, 10);
+        List<Question> questionList = questionDao.queryList(10);
         model.addAttribute("questionList", questionList);
         
         return "home";  // 返回逻辑视图名称
