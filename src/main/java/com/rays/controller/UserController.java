@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,7 +17,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.rays.common.Log;
-import com.rays.common.exception.UserNotFoundException;
 import com.rays.dao.UserDao;
 import com.rays.entity.User;
 
@@ -61,7 +59,6 @@ public class UserController {
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         
@@ -72,14 +69,11 @@ public class UserController {
     @RequestMapping(value="/{userId}", method=RequestMethod.GET)
     public String userGet(@PathVariable Integer userId, Model model) {
         
-        if (userId == null || userId == 1024) throw new UserNotFoundException();
-        
         model.addAttribute(userRepository.selectUser(userId));
         
         return "user_main_page";
     }
     
-    @ExceptionHandler(UserNotFoundException.class)
     public String exceptionHandler() {
         
         Log.p("exceptionHandler");

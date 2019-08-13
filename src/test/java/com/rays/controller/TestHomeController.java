@@ -41,7 +41,7 @@ public class TestHomeController {
             Question q = new Question();
             q.setTitle("question " + i);
             q.setId((long) i);
-            q.setDescrible("question " + i + " describle");
+            q.setContent("question " + i + " describle");
             
             list.add(q);
         }

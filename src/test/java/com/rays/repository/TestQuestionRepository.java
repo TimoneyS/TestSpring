@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.rays.config.RootConfig;
 import com.rays.dao.QuestionDao;
-import com.rays.dao.SequenceDao;
+import com.rays.dao.springdao.SequenceDao;
 import com.rays.entity.Question;
 
 @RunWith(value = SpringJUnit4ClassRunner.class)
@@ -42,7 +42,7 @@ public class TestQuestionRepository {
         question.setId(sequenceDao.getSequenceNextval("N_QUES_SEQ"));
         question.setAuthorId(10004L);
         question.setTitle("有没有什么好玩的游戏");
-        question.setDescrible("现在游戏荒了，求好玩的游戏啊。");
+        question.setContent("现在游戏荒了，求好玩的游戏啊。");
         question.setCreateDate(new Date());
         questionDao.addNewQuestion(question);
     }
@@ -52,7 +52,7 @@ public class TestQuestionRepository {
         
         Question question = questionDao.selectSingleQuestion(26L);
         
-        question.setDescrible("现在出现游戏荒了，不知道有什么好玩的游戏。");
+        question.setContent("现在出现游戏荒了，不知道有什么好玩的游戏。");
         
         questionDao.updateQuestion(question);
         

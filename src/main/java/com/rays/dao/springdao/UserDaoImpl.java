@@ -1,7 +1,8 @@
-package com.rays.dao;
+package com.rays.dao.springdao;
 
 import org.springframework.stereotype.Component;
 
+import com.rays.dao.UserDao;
 import com.rays.entity.User;
 
 @Component

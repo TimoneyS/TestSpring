@@ -1,29 +1,28 @@
-DROP TABLE IF EXISTS `n_user`;
-CREATE TABLE `n_user` (
-   `user_id`        INT UNSIGNED NOT NULL,
-   `real_name`      VARCHAR(100) NOT NULL,
-   `username`       VARCHAR(100) NOT NULL,
-   `password`       VARCHAR(100) NOT NULL,
-   `user_job`       VARCHAR(100) NOT NULL,
-   `user_title`     VARCHAR(500) NOT NULL,
-   `create_date`    DATETIME DEFAULT NOW(),
-   PRIMARY KEY ( `user_id` )
+DROP TABLE IF EXISTS question;
+CREATE TABLE question (
+   `id`                 INT UNSIGNED NOT NULL,
+   `title`              VARCHAR(100) NOT NULL,
+   `content`            VARCHAR(500),
+   `author_id`          INT UNSIGNED,
+   `create_date`        DATETIME DEFAULT NOW(),
+   PRIMARY KEY ( `id` )
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
-DROP TABLE IF EXISTS `question`;
-CREATE TABLE `question` (
-   `question_id`        INT UNSIGNED NOT NULL,
-   `question_title`     VARCHAR(100) NOT NULL,
-   `question_content`   VARCHAR(500) NOT NULL,
-   `author_id`          INT UNSIGNED NOT NULL,
-   `create_date`        DATETIME DEFAULT NOW(),
-   PRIMARY KEY ( `question_id` )
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+   `id`             INT UNSIGNED NOT NULL,
+   `realname`       VARCHAR(100) NOT NULL,
+   `username`       VARCHAR(100) NOT NULL,
+   `password`       VARCHAR(100) NOT NULL,
+   `job`            VARCHAR(100),
+   `describle`      VARCHAR(500),
+   `create_date`    DATETIME DEFAULT NOW(),
+   PRIMARY KEY ( `id` )
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 DROP TABLE IF EXISTS `answer`;
-CREATE TABLE `answer` (
+CREATE TABLE answer (
    `answer_id`          INT UNSIGNED  NOT NULL,
    `answer_content`     VARCHAR(5000) NOT NULL,
    `author_id`          INT UNSIGNED  NOT NULL,

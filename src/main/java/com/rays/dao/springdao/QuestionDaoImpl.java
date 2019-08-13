@@ -1,4 +1,4 @@
-package com.rays.dao;
+package com.rays.dao.springdao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Component;
 
 import com.rays.common.Log;
+import com.rays.dao.QuestionDao;
 import com.rays.entity.Question;
 
 @Component
@@ -48,7 +49,7 @@ public class QuestionDaoImpl implements QuestionDao {
         Question q = new Question();
         q.setId(rs.getLong("question_id"));
         q.setTitle(rs.getString("question_title"));
-        q.setDescrible(rs.getString("question_content"));
+        q.setContent(rs.getString("question_content"));
         q.setCreateDate(rs.getDate("create_date"));
         q.setAuthorId(rs.getLong("author_id"));
         return q;
@@ -58,7 +59,7 @@ public class QuestionDaoImpl implements QuestionDao {
     public void updateQuestion(Question question) {
         jdbcOpt.update(UPDATE_QUESTION, 
                 question.getTitle(),
-                question.getDescrible(),
+                question.getContent(),
                 question.getId()
                 );
     }
@@ -68,7 +69,7 @@ public class QuestionDaoImpl implements QuestionDao {
         jdbcOpt.update(INSERT_QUESTION, 
                 question.getId(),
                 question.getTitle(),
-                question.getDescrible(),
+                question.getContent(),
                 question.getAuthorId(),
                 question.getCreateDate()
                 );

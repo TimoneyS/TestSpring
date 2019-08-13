@@ -2,31 +2,15 @@ package com.rays.entity;
 
 import java.util.Date;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
 public class Question {
 
-    Long   id;
-    Long   authorId;
-    
-    @NotNull
-    @Size(min=4, max=10,message="{question.title.size}")
-    String title;
-    
-    @NotNull
-    @Size(min=4,message="{question.describle.size}")
-    String describle;
-    
-    Date   createDate;
-    
-    public Question() {
-    }
+    private Long   id;
+    private Long   authorId;
+    private String title;
+    private String content;
+    private Date   createDate;
 
-    public Question(long i, String string, Date date) {
-        this.id = i;
-        this.title = string;
-        this.createDate = date;
+    public Question() {
     }
 
     public Long getId() {
@@ -37,6 +21,14 @@ public class Question {
         this.id = id;
     }
 
+    public Long getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(Long authorId) {
+        this.authorId = authorId;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -45,12 +37,12 @@ public class Question {
         this.title = title;
     }
 
-    public String getDescrible() {
-        return describle;
+    public String getContent() {
+        return content;
     }
 
-    public void setDescrible(String describle) {
-        this.describle = describle;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public Date getCreateDate() {
@@ -60,32 +52,11 @@ public class Question {
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
-    
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
 
-    public Long getAuthorId() {
-        return authorId;
-    }
-
-    public void setAuthorId(Long authorId) {
-        this.authorId = authorId;
-    }
-    
     @Override
     public String toString() {
-        return "Question:\nid = " + id +
-                "\nauthorId = " + authorId +
-                "\ncreateDate = " + createDate +
-                "\ndescrible = " + describle +
-                "\ntitle = " + title;
+        return "Question:\nid = " + id + "\nauthorId = " + authorId + "\ncreateDate = " + createDate + "\ncontent = "
+                + content + "\ntitle = " + title;
     }
-    
+
 }

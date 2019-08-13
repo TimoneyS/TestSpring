@@ -1,7 +1,5 @@
 package com.rays.controller;
 
-import java.util.Date;
-
 import org.junit.Test;
 import org.mockito.Mockito;
 import org.springframework.test.web.servlet.MockMvc;
@@ -11,7 +9,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.servlet.view.InternalResourceView;
 
 import com.rays.common.Log;
-import com.rays.controller.QuestionController;
 import com.rays.dao.QuestionDao;
 import com.rays.entity.Question;
 
@@ -41,7 +38,10 @@ public class TestQuestionController {
     }
     
     private Question createQuestion(Long id) {
-        Question question = new Question(id, "Question " + id, new Date());
+        Question question = new Question();
+        question.setId(123L);
+        question.setTitle("Question " + id + " title");
+        question.setContent("Question " + id + " describle");
         return question;
     }
     
