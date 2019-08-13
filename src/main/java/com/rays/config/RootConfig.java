@@ -9,7 +9,7 @@ import org.springframework.core.io.ClassPathResource;
 
 @Configuration
 @EnableAspectJAutoProxy
-@Import(value= { DatabaseConfig.class, SecurityConfig.class, CacheConfig.class, TxConfig.class})
+@Import(value= { DatabaseConfig.class, CacheConfig.class, TxConfig.class})
 public class RootConfig {
     
     @Bean

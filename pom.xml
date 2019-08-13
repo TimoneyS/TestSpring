@@ -37,7 +37,6 @@
             <scope>test</scope>
         </dependency>
 		
-		
 		<!-- mockito -->
 		<dependency><!-- 模拟Web请求，用于测试mvc -->
 			<groupId>org.mockito</groupId>
@@ -82,29 +81,12 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
 
-		<!-- Spring Security -->
-		<dependency><!-- 提供Spring Security基本库 -->
-		    <groupId>org.springframework.security</groupId>
-		    <artifactId>spring-security-core</artifactId>
-		    <version>${spring.security.version}</version>
-		</dependency>
-        <dependency><!-- 包含通过XML和Java配置Spring Security的功能支持 -->
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
-            <version>${spring.security.version}</version>
-        </dependency>
-		<dependency><!-- 提供了Spring Security基于Filter的Web安全性支持 -->
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-web</artifactId>
-			<version>${spring.security.version}</version>
-		</dependency>
-		<dependency><!-- Spring Security的JSP标签库 -->
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-taglibs</artifactId>
-            <version>${spring.security.version}</version>
-        </dependency>
-		
 		<!-- servlet 和 JSP -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
