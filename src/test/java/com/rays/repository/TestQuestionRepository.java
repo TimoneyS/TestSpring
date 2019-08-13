@@ -59,9 +59,7 @@ public class TestQuestionRepository {
     }
     
     public void testSelectQuestion() {
-        
-        questionDao.selectQuestion(2, 2);
-        
+        questionDao.queryList(1);
     }
     
 }

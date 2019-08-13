@@ -21,7 +21,7 @@ public class TestHomeController {
         
         List<Question> questionList = createQuestionList(10);
         QuestionDao questionDao = Mockito.mock(QuestionDao.class);
-        Mockito.when(questionDao.selectQuestion(10, 10)).thenReturn(questionList);
+        Mockito.when(questionDao.queryList(10)).thenReturn(questionList);
         controller.questionDao = questionDao;
         
         MockMvc mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
