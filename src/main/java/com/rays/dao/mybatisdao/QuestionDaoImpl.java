@@ -26,7 +26,7 @@ public class QuestionDaoImpl implements QuestionDao {
     public Question querySingle(Long id) {
         try (SqlSession session = sqlSessionFactory.openSession()) {
             QuestionMapper mapper = session.getMapper(QuestionMapper.class);
-            return mapper.querySingle(id);
+            return mapper.selectOne(id);
         }
     }
 

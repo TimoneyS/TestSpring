@@ -22,19 +22,6 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 public class DatabaseConfig {
     
     @Bean
-    public SqlSessionFactory sqlSessionFactory(DataSource ds) throws Exception {
-        SqlSessionFactoryBean sfb = new SqlSessionFactoryBean();
-        
-        sfb.setDataSource(ds);
-        
-        return sfb.getObject();
-    }
-    
-    @Bean
-    public JdbcTemplate jdbcTemplate(DataSource ds) {
-        return new JdbcTemplate(ds);
-    }
-    
     @Profile("prod")
     public DataSource datasource(
             @Value("${driver}")   String dirver,
@@ -54,13 +41,28 @@ public class DatabaseConfig {
     }
     
     @Bean
-    public DataSource datasource() {
+    @Profile("dev")
+    public DataSource embeddedDatasource() {
         System.out.println("创建嵌入式数据源");
         return new EmbeddedDatabaseBuilder()
                 .setType(EmbeddedDatabaseType.H2)
                 .addScript("classpath:schema.sql")
                 .addScript("classpath:test-data.sql")
                 .build();
+    }
+    
+    @Bean
+    public SqlSessionFactory sqlSessionFactory(DataSource ds) throws Exception {
+        SqlSessionFactoryBean sfb = new SqlSessionFactoryBean();
+        
+        sfb.setDataSource(ds);
+        
+        return sfb.getObject();
+    }
+    
+    @Bean
+    public JdbcTemplate jdbcTemplate(DataSource ds) {
+        return new JdbcTemplate(ds);
     }
     
 }
