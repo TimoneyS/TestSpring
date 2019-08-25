@@ -1,17 +1,21 @@
 package com.rays.entity;
 
+import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
-public class Question {
+public class Question  implements Serializable {
 
-    private Long   id;
-    private Long   authorId;
-    private String title;
-    private String content;
-    private Date   createDate;
-
-    public Question() {
-    }
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 2912641860336054012L;
+    private Long        id;
+    private String      title;
+    private String      content;
+    private List<Reply> replys;
+    private Author      author;
+    private Date        createDate;
 
     public Long getId() {
         return id;
@@ -19,14 +23,6 @@ public class Question {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getAuthorId() {
-        return authorId;
-    }
-
-    public void setAuthorId(Long authorId) {
-        this.authorId = authorId;
     }
 
     public String getTitle() {
@@ -45,6 +41,22 @@ public class Question {
         this.content = content;
     }
 
+    public List<Reply> getReplys() {
+        return replys;
+    }
+
+    public void setReplys(List<Reply> replys) {
+        this.replys = replys;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
     public Date getCreateDate() {
         return createDate;
     }
@@ -55,8 +67,20 @@ public class Question {
 
     @Override
     public String toString() {
-        return "Question:\nid = " + id + "\nauthorId = " + authorId + "\ncreateDate = " + createDate + "\ncontent = "
-                + content + "\ntitle = " + title;
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("\nQuestion ").append(id).append(" : ").append(title).append('\n')
+                .append(content).append("\n")
+                .append("创建时间：").append(createDate).append('\n')
+                .append("作者：").append(author).append("\n")
+                .append("-----------------------------------------------------\n");
+
+        if (replys != null) {
+            for (Reply a : replys) {
+                sb.append(a).append('\n');
+            }
+        }
+        return sb.toString();
     }
 
 }

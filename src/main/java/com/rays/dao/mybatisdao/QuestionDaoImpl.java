@@ -2,10 +2,20 @@ package com.rays.dao.mybatisdao;
 
 import java.util.List;
 
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
 import com.rays.dao.QuestionDao;
+import com.rays.dao.mapper.QuestionMapper;
 import com.rays.entity.Question;
 
+@Repository
 public class QuestionDaoImpl implements QuestionDao {
+    
+    @Autowired
+    private SqlSessionFactory sqlSessionFactory;
 
     @Override
     public List<Question> queryList(int count) {
@@ -14,7 +24,10 @@ public class QuestionDaoImpl implements QuestionDao {
 
     @Override
     public Question querySingle(Long id) {
-        return null;
+        try (SqlSession session = sqlSessionFactory.openSession()) {
+            QuestionMapper mapper = session.getMapper(QuestionMapper.class);
+            return mapper.querySingle(id);
+        }
     }
 
     @Override

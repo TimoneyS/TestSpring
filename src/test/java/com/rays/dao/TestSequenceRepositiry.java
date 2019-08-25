@@ -1,4 +1,4 @@
-package com.rays.repository;
+package com.rays.dao;
 
 import org.junit.Assert;
 import org.junit.Test;

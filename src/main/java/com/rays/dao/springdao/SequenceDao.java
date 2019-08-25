@@ -5,7 +5,6 @@ import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
-@Component
 public class SequenceDao {
 
     @Autowired
